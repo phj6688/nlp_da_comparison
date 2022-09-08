@@ -11,10 +11,10 @@ warnings.filterwarnings("ignore")
 
 
 pct_words_to_swap = float(input("Enter percentage of words to swap (from 0.01 to 0.9): "))
-assert 0.01<pct_words_to_swap<0.9,'enter number between 0.01 and 0.9'
+assert 0.01<=pct_words_to_swap<=0.9,'enter number between 0.01 and 0.9'
 
 transformations_per_example = int(input("Enter number of transformations per example(from 1 to 10): "))
-assert 1<transformations_per_example<10,'enter number between 1 and 10'
+assert 1<=transformations_per_example<=10,'enter number between 1 and 10'
 
 
 
@@ -37,11 +37,11 @@ def load_all_data():
     target =dict_target_names[input_target]
     paths = dataset_path(list_of_dataset_names,target)
     df_list = [load_data(i) for i in paths]
-    return df_list
+    return df_list, list_of_dataset_names
 
 
 # run it in the this folder in order to get access to relative pass!
-df_list = load_all_data()
+df_list, df_name_list = load_all_data()
 fraction = float(input('Enter fraction of data to use (from 0.1 to 0.9): '))
 include_original = input('Include original data? (y/n): ').lower()
 yes = ['yes','y', 'ye', '']
@@ -56,9 +56,15 @@ else:
 # pass the data to the augmenters
 
 for aug in list_of_augs:
-    for df in df_list:
-        new_df = augment_text(df,dict_aug_methods[aug],fraction,pct_words_to_swap,transformations_per_example,include_original=include_original)
-        new_df.to_csv(f'{dict_aug_methods[aug]}_{fraction}_{transformations_per_example}_{pct_words_to_swap}_{include_original}.csv',index=False)
-        print(f'{dict_aug_methods[aug]}_{fraction}_{transformations_per_example}_{pct_words_to_swap}_{include_original}.csv was created successfully')
+    for df, df_name in zip(df_list, df_name_list):
+        # assige a name for each aug and dataset and create a folder for each dataset        
+        aug_name = dict_aug_methods[aug]
+        new_df = augment_text(df,aug_name,fraction,pct_words_to_swap,transformations_per_example,include_original=include_original)
+        # check if folder is already present 
+        if not os.path.exists(f"csv/{aug_name}_{df_name}"):
+            os.makedirs(f"csv/{aug_name}_{df_name}")            
+        new_df.to_csv(f'csv/{aug_name}_{df_name}/{aug_name}_{df_name}_{fraction}_{transformations_per_example}_{pct_words_to_swap}_{include_original}.csv',index=False)
+        print(f'{df_name}_{aug_name}_{fraction}_{transformations_per_example}_{pct_words_to_swap}_{include_original}.csv was created successfully')
+
 
 
