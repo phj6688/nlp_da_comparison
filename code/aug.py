@@ -19,7 +19,8 @@ assert 1<=transformations_per_example<=10,'enter number between 1 and 10'
 
 
 
-dict_aug_methods = {1:'eda_augmenter', 2:'wordnet_augmenter', 3:'clare_augmenter', 4:'backtranslation_augmenter', 5:'checklist_augmenter', 6:'embedding_augmenter', 7:'deletion_augmenter', 8:'charswap_augmenter'}
+dict_aug_methods = {1:'eda_augmenter', 2:'wordnet_augmenter', 3:'clare_augmenter',
+                 4:'backtranslation_augmenter', 5:'charswap_augmenter',6:'aeda_augmenter'}
 
 for key, value in dict_aug_methods.items():
     print(value,' -->',key)

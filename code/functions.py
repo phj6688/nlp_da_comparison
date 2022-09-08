@@ -1,6 +1,7 @@
 
 import pandas as pd
 from textattack.augmentation import *
+from aeda import Aeda_Augmenter
 import os
 
 
@@ -56,15 +57,16 @@ def augment_text(df,aug_method,fraction,pct_words_to_swap,transformations_per_ex
     'backtranslation_augmenter':BackTranslationAugmenter(pct_words_to_swap=pct_words_to_swap,
                                     transformations_per_example=transformations_per_example)
                                     ,
-    'checklist_augmenter' :CheckListAugmenter(pct_words_to_swap=pct_words_to_swap,
-                                        transformations_per_example=transformations_per_example)
-                                        ,
-    'embedding_augmenter':EmbeddingAugmenter(pct_words_to_swap=pct_words_to_swap,
-                                    transformations_per_example=transformations_per_example)
-                                    ,
-    'deletion_augmenter':DeletionAugmenter(pct_words_to_swap=pct_words_to_swap,
-                                    transformations_per_example=transformations_per_example)
-                                    ,
+    # 'checklist_augmenter' :CheckListAugmenter(pct_words_to_swap=pct_words_to_swap,
+    #                                     transformations_per_example=transformations_per_example)
+    #                                     ,
+    # 'embedding_augmenter':EmbeddingAugmenter(pct_words_to_swap=pct_words_to_swap,
+    #                                 transformations_per_example=transformations_per_example)
+    #                                 ,
+    # 'deletion_augmenter':DeletionAugmenter(pct_words_to_swap=pct_words_to_swap,
+    #                                 transformations_per_example=transformations_per_example)
+    'aeda_augmenter':Aeda_Augmenter(pct_words_to_swap=pct_words_to_swap,
+                            transformations_per_example=transformations_per_example),
     'charswap_augmenter':CharSwapAugmenter(pct_words_to_swap=pct_words_to_swap,
                                     transformations_per_example=transformations_per_example)
     }
