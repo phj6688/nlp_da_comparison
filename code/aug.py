@@ -1,4 +1,3 @@
-from xml.etree.ElementInclude import include
 from textattack.augmentation import \
     EasyDataAugmenter, BackTranslationAugmenter, WordNetAugmenter, CLAREAugmenter, \
     CheckListAugmenter, EmbeddingAugmenter, DeletionAugmenter, CharSwapAugmenter

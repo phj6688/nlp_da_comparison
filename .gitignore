@@ -1,6 +1,7 @@
 **/logs
 **/results
 **/csv
+**/offsite
 __pycache__
 draft.ipynb
 .gitignore

@@ -35,12 +35,12 @@ from nlp_aug import *
 
 #loading a pickle file
 def load_pickle(file):
-	return pickle.load(open(file, 'rb'))
+    return pickle.load(open(file, 'rb'))
 
 #create an output folder if it does not already exist
 def confirm_output_folder(output_folder):
-	if not os.path.exists(output_folder):
-	    os.makedirs(output_folder)
+    if not os.path.exists(output_folder):
+        os.makedirs(output_folder)
 
 #get full image paths
 def get_txt_paths(folder):
@@ -88,15 +88,15 @@ def gen_vocab_dicts(folder, output_pickle_path, huge_word2vec):
     #loop through each text file
     for txt_path in all_txt_paths:
 
-    	# get all the words
-    	try:
-    		all_lines = open(txt_path, "r").readlines()
-    		for line in all_lines:
-    			words = line[:-1].split(' ')
-    			for word in words:
-    			    vocab.add(word)
-    	except:
-    		print(txt_path, "has an error")
+        # get all the words
+        try:
+            all_lines = open(txt_path, "r").readlines()
+            for line in all_lines:
+                words = line[:-1].split(' ')
+                for word in words:
+                    vocab.add(word)
+        except:
+            print(txt_path, "has an error")
     
     print(len(vocab), "unique words found")
 
@@ -115,40 +115,40 @@ def gen_vocab_dicts(folder, output_pickle_path, huge_word2vec):
 #getting the x and y inputs in numpy array form from the text file
 def get_x_y(train_txt, num_classes, word2vec_len, input_size, word2vec, percent_dataset):
 
-	#read in lines
-	train_lines = open(train_txt, 'r').readlines()
-	shuffle(train_lines)
-	train_lines = train_lines[:int(percent_dataset*len(train_lines))]
-	num_lines = len(train_lines)
+    #read in lines
+    train_lines = open(train_txt, 'r').readlines()
+    shuffle(train_lines)
+    train_lines = train_lines[:int(percent_dataset*len(train_lines))]
+    num_lines = len(train_lines)
 
-	#initialize x and y matrix
-	x_matrix = None
-	y_matrix = None
+    #initialize x and y matrix
+    x_matrix = None
+    y_matrix = None
 
-	try:
-		x_matrix = np.zeros((num_lines, input_size, word2vec_len))
-	except:
-		print("Error!", num_lines, input_size, word2vec_len)
-	y_matrix = np.zeros((num_lines, num_classes))
+    try:
+        x_matrix = np.zeros((num_lines, input_size, word2vec_len))
+    except:
+        print("Error!", num_lines, input_size, word2vec_len)
+    y_matrix = np.zeros((num_lines, num_classes))
 
-	#insert values
-	for i, line in enumerate(train_lines):
+    #insert values
+    for i, line in enumerate(train_lines):
 
-		parts = line[:-1].split('\t')
-		label = int(parts[0])
-		sentence = parts[1]	
+        parts = line[:-1].split('\t')
+        label = int(parts[0])
+        sentence = parts[1]	
 
-		#insert x
-		words = sentence.split(' ')
-		words = words[:x_matrix.shape[1]] #cut off if too long
-		for j, word in enumerate(words):
-			if word in word2vec:
-				x_matrix[i, j, :] = word2vec[word]
+        #insert x
+        words = sentence.split(' ')
+        words = words[:x_matrix.shape[1]] #cut off if too long
+        for j, word in enumerate(words):
+            if word in word2vec:
+                x_matrix[i, j, :] = word2vec[word]
 
-		#insert y
-		y_matrix[i][label] = 1.0
+        #insert y
+        y_matrix[i][label] = 1.0
 
-	return x_matrix, y_matrix
+    return x_matrix, y_matrix
 
 ###################################################
 ############### data augmentation #################
@@ -159,13 +159,13 @@ def gen_tsne_aug(train_orig, output_file):
     writer = open(output_file, 'w')
     lines = open(train_orig, 'r').readlines()
     for i, line in enumerate(lines):
-    	parts = line[:-1].split('\t')
-    	label = parts[0]
-    	sentence = parts[1]
-    	writer.write(line)
-    	for alpha in [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]:
-    		aug_sentence = eda_4(sentence, alpha_sr=alpha, alpha_ri=alpha, alpha_rs=alpha, p_rd=alpha, num_aug=2)[0]
-    		writer.write(label + "\t" + aug_sentence + '\n')
+        parts = line[:-1].split('\t')
+        label = parts[0]
+        sentence = parts[1]
+        writer.write(line)
+        for alpha in [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]:
+            aug_sentence = eda_4(sentence, alpha_sr=alpha, alpha_ri=alpha, alpha_rs=alpha, p_rd=alpha, num_aug=2)[0]
+            writer.write(label + "\t" + aug_sentence + '\n')
     writer.close()
     print("finished eda for tsne for", train_orig, "to", output_file)
 
@@ -248,28 +248,28 @@ def gen_rd_aug(train_orig, output_file, alpha_rd, n_aug):
 
 #building the model in keras
 def build_model(sentence_length, word2vec_len, num_classes):
-	model = None
-	model = Sequential()
-	model.add(Bidirectional(LSTM(64, return_sequences=True), input_shape=(sentence_length, word2vec_len)))
-	model.add(Dropout(0.5))
-	model.add(Bidirectional(LSTM(32, return_sequences=False)))
-	model.add(Dropout(0.5))
-	model.add(Dense(20, activation='relu'))
-	model.add(Dense(num_classes, kernel_initializer='normal', activation='softmax'))
-	model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-	#print(model.summary())
-	return model
+    model = None
+    model = Sequential()
+    model.add(Bidirectional(LSTM(64, return_sequences=True), input_shape=(sentence_length, word2vec_len)))
+    model.add(Dropout(0.5))
+    model.add(Bidirectional(LSTM(32, return_sequences=False)))
+    model.add(Dropout(0.5))
+    model.add(Dense(20, activation='relu'))
+    model.add(Dense(num_classes, kernel_initializer='normal', activation='softmax'))
+    model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+    #print(model.summary())
+    return model
 
 #building the cnn in keras
 def build_cnn(sentence_length, word2vec_len, num_classes):
-	model = None
-	model = Sequential()
-	model.add(layers.Conv1D(128, 5, activation='relu', input_shape=(sentence_length, word2vec_len)))
-	model.add(layers.GlobalMaxPooling1D())
-	model.add(Dense(20, activation='relu'))
-	model.add(Dense(num_classes, kernel_initializer='normal', activation='softmax'))
-	model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-	return model
+    model = None
+    model = Sequential()
+    model.add(layers.Conv1D(128, 5, activation='relu', input_shape=(sentence_length, word2vec_len)))
+    model.add(layers.GlobalMaxPooling1D())
+    model.add(Dense(20, activation='relu'))
+    model.add(Dense(num_classes, kernel_initializer='normal', activation='softmax'))
+    model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+    return model
 
 #one hot to categorical
 def one_hot_to_categorical(y):
