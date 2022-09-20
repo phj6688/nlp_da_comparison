@@ -4,7 +4,7 @@ from lstm import *
 def run_model(train_file, test_file, num_classes, model_output_path):
 
 	#initialize model
-	model = build_model(input_size, word2vec_len, num_classes)
+	model = build_lstm(input_size, word2vec_len, num_classes)
 
 	#load data
 	train_x, train_y = get_x_y(train_file, num_classes, word2vec_len, input_size, word2vec, 1)

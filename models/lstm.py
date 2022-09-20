@@ -7,7 +7,7 @@ from keras.callbacks import EarlyStopping
 
 
 
-def build_model(sentence_length, word2vec_len, num_classes):
+def build_lstm(sentence_length, word2vec_len, num_classes):
     model = None
     model = Sequential()
     model.add(Bidirectional(LSTM(64, return_sequences=True), input_shape=(sentence_length, word2vec_len)))
