@@ -1,7 +1,6 @@
-logs/
-results/
-csv/
-offsite/
+logs/*
+results/*
+csv/*
 __pycache__/
 draft.ipynb
 glove.840B.300d.txt
