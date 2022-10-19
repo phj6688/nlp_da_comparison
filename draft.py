@@ -20,16 +20,19 @@
 from sklearn.manifold import TSNE
 import plotly.express as px
 
+
 df = px.data.iris()
 
 features = df.loc[:, :'petal_width']
 
 tsne = TSNE(n_components=2, random_state=0)
-projections = tsne.fit_transform()
+projections = tsne.fit_transform(features)
 
 fig = px.scatter(
     projections, x=0, y=1,
     color=df.species, labels={'color': 'species'}
 )
-fig.show()
+print('len of projection: ',len(projections))
+print('shape of projection: ',projections.shape)
+print(projections)
 

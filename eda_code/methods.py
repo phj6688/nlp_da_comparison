@@ -25,7 +25,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' #get rid of warnings
 from os import listdir
 from os.path import isfile, join, isdir
 import pickle
-import snoop
+
 #import data augmentation methods
 from nlp_aug import *
 
@@ -113,7 +113,6 @@ def gen_vocab_dicts(folder, output_pickle_path, huge_word2vec):
     print("dictionaries outputted to", output_pickle_path)
 
 #getting the x and y inputs in numpy array form from the text file
-#@snoop()
 def get_x_y(train_txt, num_classes, word2vec_len, input_size, word2vec, percent_dataset):
 
     #read in lines
@@ -134,15 +133,10 @@ def get_x_y(train_txt, num_classes, word2vec_len, input_size, word2vec, percent_
 
     #insert values
     for i, line in enumerate(train_lines):
-        #print(line)
-        try:
-            parts = line[:-1].split('\t')
-            label = int(parts[0])
-            sentence = parts[1]
-        except Exception as e:
-            parts = line[:-1].split(' ',1)
-            label = int(parts[0])
-            sentence = parts[1]        	
+
+        parts = line[:-1].split('\t')
+        label = int(parts[0])
+        sentence = parts[1]	
 
         #insert x
         words = sentence.split(' ')

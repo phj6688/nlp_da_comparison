@@ -20,31 +20,17 @@ def train_x(train_txt, word2vec_len, input_size, word2vec):
 
 	#insert values
 	for i, line in enumerate(train_lines):
-		try:
-			parts = line[:-1].split('\t')
-			label = int(parts[0])
-			sentence = parts[1]
-			words = sentence.split(' ')
-			words = words[:x_matrix.shape[1]] #cut off if too long
-			for j, word in enumerate(words):
-				if word in word2vec:
-					x_matrix[i, j, :] = word2vec[word]
-		except Exception as e:
-			parts = line[:-1].split(' ',1)
-			label = int(parts[0])
-			sentence = parts[1]
-			words = sentence.split(' ')
-			words = words[:x_matrix.shape[1]] #cut off if too long
-			for j, word in enumerate(words):
-				if word in word2vec:
-					x_matrix[i, j, :] = word2vec[word]
-		# parts = line[:-1].split('\t')
-		# label = int(parts[0])
-		# sentence = parts[1]	
+
+		parts = line[:-1].split('\t')
+		label = int(parts[0])
+		sentence = parts[1]	
 
 		#insert x
-		
-		
+		words = sentence.split(' ')
+		words = words[:x_matrix.shape[1]] #cut off if too long
+		for j, word in enumerate(words):
+			if word in word2vec:
+				x_matrix[i, j, :] = word2vec[word]
 
 	return x_matrix
 
@@ -64,18 +50,11 @@ def get_tsne_labels(file):
 	alphas = []
 	lines = open(file, 'r').readlines()
 	for i, line in enumerate(lines):
-		try:
-			parts = line[:-1].split('\t')
-			_class = int(parts[0])
-			alpha = i % 10
-			labels.append(_class)
-			alphas.append(alpha)
-		except Exception as e:
-			parts = line[:-1].split(' ',1)
-			_class = int(parts[0])
-			alpha = i % 10
-			labels.append(_class)
-			alphas.append(alpha)
+		parts = line[:-1].split('\t')
+		_class = int(parts[0])
+		alpha = i % 10
+		labels.append(_class)
+		alphas.append(alpha)
 	return labels, alphas
 
 def get_plot_vectors(layer_output):
@@ -85,10 +64,10 @@ def get_plot_vectors(layer_output):
 
 def plot_tsne(tsne, labels, output_path):
 
-	label_to_legend_label = {	'outputs_f4/pc_tsne.png':{	0:'Con (augmented)', 
+	label_to_legend_label = {'output/cr_tsne.png':{	0:'Con (augmented)', 
 															100:'Con (original)', 
 															1: 'Pro (augmented)', 
-															101:'Pro (original)'}}
+								 							101:'Pro (original)'}}
 								# 'outputs_f4/trec_tsne.png':{0:'Description (augmented)',
 								# 							100:'Description (original)',
 								# 							1:'Entity (augmented)',
@@ -102,13 +81,13 @@ def plot_tsne(tsne, labels, output_path):
 								# 							5:'Number (augmented)',
 								# 							105:'Number (original)'}}
 
-	plot_to_legend_size = {'outputs_f4/pc_tsne.png':11}#, 'outputs_f4/trec_tsne.png':6}
+	plot_to_legend_size = {'output/cr_tsne.png':11}
 
-	#labels = labels.tolist()
+	labels = labels#.tolist() 
 	big_groups = [label for label in labels if label < 100]
 	big_groups = list(sorted(set(big_groups)))
 
-	colors = ['b', 'g', 'r', 'c', 'm', 'y', 'k', '#ff1493', '#FF4500']
+	colors = ['b', 'g']#, 'r', 'c', 'm', 'y', 'k', '#ff1493', '#FF4500']
 	fig, ax = plt.subplots()
 
 	for big_group in big_groups:
@@ -125,7 +104,11 @@ def plot_tsne(tsne, labels, output_path):
 			#params
 			color = colors[int(group % 100)]
 			marker = 'x' if group < 100 else 'o'
-			size = 1 if group < 100 else 27
+			size = 1 if group < 100 else 40
+			#check if size 27 is available
+			if size == 40:
+				print(size)
+
 			legend_label = label_to_legend_label[output_path][group]
 
 			ax.scatter(x, y, color=color, marker=marker, s=size, label=legend_label)
@@ -135,6 +118,8 @@ def plot_tsne(tsne, labels, output_path):
 	plt.legend(prop={'size': legend_size})
 	plt.savefig(output_path, dpi=1000)
 	plt.clf()	
+import plotly.express as px
+
 
 if __name__ == "__main__":
 
@@ -142,28 +127,31 @@ if __name__ == "__main__":
 	word2vec_len = 300
 	input_size = 25
 
-	datasets = ['pc'] #['pc', 'trec']
+	datasets = ['cr'] #['pc', 'trec']
 	num_classes_list =[2] #[2, 6]
 
 	for i, dataset in enumerate(datasets):
 
 		#load parameters
-		model_checkpoint = 'outputs_f4/' + dataset + '_aug.h5'
-		file = 'train/' + dataset + '/train_aug_st.txt'#test_short_aug.txt'
+		model_checkpoint = 'output/' + dataset + '.h5'
+		file = 'txt_for_test/' + dataset + '/test_aug.txt'
 		num_classes = num_classes_list[i]
-		word2vec_pickle = 'train/' + dataset + '/word2vec.p'
+		word2vec_pickle = 'txt_for_test/' + dataset + '/word2vec.p'
 		word2vec = load_pickle(word2vec_pickle)
 
 		#do tsne
 		layer_output = get_dense_output(model_checkpoint, file, num_classes)
-		print(layer_output.shape)
+		#print(layer_output.shape)
 		t = get_plot_vectors(layer_output)
-
+	
+		# use plotly just to compare with the original plot from eda
 		labels, alphas = get_tsne_labels(file)
-
+		projections = TSNE(n_components=2).fit_transform(layer_output)
+		fig = px.scatter(projections, x=0, y=1, color= labels ,labels={'color':'label'})
+		fig.show()
 		print(labels, alphas)
 
-		writer = open("outputs_f4/new_tsne.txt", 'w')
+		writer = open("output/new_tsne.txt", 'w')
 
 		label_to_mark = {0:'x', 1:'o'}
 
@@ -171,5 +159,6 @@ if __name__ == "__main__":
 			alpha = alphas[i]
 			line = str(t[i, 0]) + ' ' + str(t[i, 1]) + ' ' + str(label_to_mark[label]) + ' ' + str(alpha/10)
 			writer.write(line + '\n')
-		plot_tsne(t, labels, 'outputs_f4/' + dataset + '_tsne.png')
+		plot_tsne(t, labels, 'output/' + dataset + '_tsne.png')
+
 
