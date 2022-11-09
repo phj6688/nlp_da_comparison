@@ -48,10 +48,10 @@ def run_model(train_file, test_file, num_classes, model_output_path):
 if __name__ == "__main__":
 
 	#parameters
-	dataset_folders = ['txt_for_test/pc']
-	output_paths = ['output/pc.h5']
-	num_classes_list = [2]
-	input_size_list = [25]
+	dataset_folders = ['txt_for_test/train/pc','txt_for_test/train/cr','txt_for_test/train/subj']
+	output_paths = ['output/pc_1000_sample.h5','output/cr_1000_sample.h5','output/subj_1000_sample.h5']
+	num_classes_list = [2,2,2]
+	input_size_list = [25,25,25]
 
 	#word2vec dictionary
 	word2vec_len = 300
@@ -61,7 +61,7 @@ if __name__ == "__main__":
 		num_classes = num_classes_list[i]
 		input_size = input_size_list[i]
 		output_path = output_paths[i]
-		train_orig = dataset_folder + '/train.txt'
+		train_orig = dataset_folder + '/train1000_sample.txt'
 		test_path = dataset_folder + '/test.txt'
 		word2vec_pickle = dataset_folder + '/word2vec.p'
 		word2vec = load_pickle(word2vec_pickle)

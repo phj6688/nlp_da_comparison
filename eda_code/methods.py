@@ -163,8 +163,8 @@ def gen_tsne_aug(train_orig, output_file):
         label = parts[0]
         sentence = parts[1]
         writer.write(line)
-        for alpha in [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]:
-            aug_sentence = eda_4(sentence, alpha_sr=alpha, alpha_ri=alpha, alpha_rs=alpha, p_rd=alpha, num_aug=2)[0]
+        for alpha in [0.1]:
+            aug_sentence = eda_4(sentence, alpha_sr=alpha, alpha_ri=alpha, alpha_rs=alpha, p_rd=alpha, num_aug=1)[0]
             writer.write(label + "\t" + aug_sentence + '\n')
     writer.close()
     print("finished eda for tsne for", train_orig, "to", output_file)

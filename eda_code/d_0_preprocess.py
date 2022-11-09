@@ -12,19 +12,20 @@ if __name__ == "__main__":
 
 	#global params
 	huge_word2vec = 'glove.840B.300d.txt'
-	datasets = ['cr']#, 'trec']
+	datasets = ['pc', 'cr', 'subj']
 
 	for dataset in datasets:
 
-		dataset_folder = 'txt_for_test/' + dataset
-		#test_short = 'txt_for_test/' + dataset + '/test_short.txt'
+		dataset_folder = 'txt_for_test/train/' + dataset
+		#train1000_sample = 'txt_for_test/' + dataset + '/test_short.txt'
 		#test_aug_short = dataset_folder + '/test_short_aug.txt'
-		test = dataset_folder + '/test.txt'
-		test_aug = dataset_folder + '/test_aug.txt'
+		train = dataset_folder + '/train1000_sample.txt'
+		train_aug = dataset_folder + '/train_aug.txt'
 		word2vec_pickle = dataset_folder + '/word2vec.p' 
 
 		#augment the data
-		gen_tsne_aug(test, test_aug)
+		print(dataset)
+		gen_tsne_aug(train, train_aug)
 
 		#generate the vocab dictionaries
 		gen_vocab_dicts(dataset_folder, word2vec_pickle, huge_word2vec)

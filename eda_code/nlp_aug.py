@@ -218,7 +218,7 @@ def eda_4(sentence, alpha_sr=0.3, alpha_ri=0.2, alpha_rs=0.1, p_rd=0.15, num_aug
 
     return augmented_sentences
 
-def SR(sentence, alpha_sr, n_aug=9):
+def SR(sentence, alpha_sr, n_aug=1):
 
     sentence = get_only_chars(sentence)
     words = sentence.split(' ')
@@ -238,7 +238,7 @@ def SR(sentence, alpha_sr, n_aug=9):
 
     return augmented_sentences
 
-def RI(sentence, alpha_ri, n_aug=9):
+def RI(sentence, alpha_ri, n_aug=1):
 
     sentence = get_only_chars(sentence)
     words = sentence.split(' ')
@@ -258,7 +258,7 @@ def RI(sentence, alpha_ri, n_aug=9):
 
     return augmented_sentences
 
-def RS(sentence, alpha_rs, n_aug=9):
+def RS(sentence, alpha_rs, n_aug=1):
 
     sentence = get_only_chars(sentence)
     words = sentence.split(' ')
@@ -278,7 +278,7 @@ def RS(sentence, alpha_rs, n_aug=9):
 
     return augmented_sentences
 
-def RD(sentence, alpha_rd, n_aug=9):
+def RD(sentence, alpha_rd, n_aug=1):
 
     sentence = get_only_chars(sentence)
     words = sentence.split(' ')
