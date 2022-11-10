@@ -1,0 +1,60 @@
+0	No Back-light at night.
+0	There are no back seats at night.
+1	Buy it! Great first digital camera, Comes with docking station, charger, fair price, great quality.
+1	The first digital room comes with docking station, charger, good price, excellent quality.
+1	5 MP, manual features, construction, quality pictures, software interface, quick charger.
+1	5 MP, send, edit, quality images, desktop interface, quick download.
+1	It's cheap
+1	It's cheap.
+1	Easy to use, great battery life, variety of ringtones and faceplates to buy.
+1	Easy to use, battery life, sound variations and expensive purchase.
+0	Flash recharges slowly with NiMH. Small 8MB card.
+0	Flash is slowly recharged with NiMH. Small 8MB card.
+1	Great Pictures
+1	Large images
+1	fabulous picture quality, very quick operation
+1	Fabulous image quality, fast operation
+1	small, enough features &#13;&#10;
+1	Minimum and sufficient features &#13;&#10;
+1	instant photos, ease of carrying, no downloading
+1	Snapshot, easy to transport, no escape
+0	so new that it's hard to find or get accessories for
+0	News in such a way that it is difficult to find access to
+1	Great picture photos
+1	Large Image Images
+0	Port cover, antenna when extended, takes a bit to find sweet spot.
+0	The cover of the port, the antenna when it extends, takes a little time to find a soft spot.
+0	A little noisy. 
+0	A little strong.
+0	could do with more pixals
+0	could do with more pixels
+0	Software / driver problems
+0	Software / Driver Problems
+0	Brightness varies too much on LCD, video out, and computer
+0	Brightness varies too much in LCD, video outside and computer
+0	Functions don't work as well as if individual items (separate fax, etc)
+0	The functions did not work as much as if individual elements (separate fax, etc.)
+0	No USB and no optical zoom, not great in low light
+0	No optical zoom of USB, no big in black light
+0	Sometimes more than one sheet of paper is pulled through at a time
+0	Archions of a paper unter in an instant.
+1	A solidly built  great little printer.
+1	A very small impression solidly built.
+1	egronomic shape, inexpensive, loud ringer, several accessories included, fm tuner, minibrowser
+1	Ergonomic shape, sound head, strong, jivêye seat, tuner fm, minibrowser
+0	Ink smears and ink blots
+0	Ink handles and ink handles
+0	Battery life is terrible
+0	The battery life is terrifying.
+0	Does not fold very compact.
+0	Don't bend too compact.
+0	sh_t pictures most of the time, viewfinder not accurate
+0	Images sh_t most of the time, the viewfinder is not necessary
+1	speed, clarity
+1	Speedy, clear
+1	Quality LCD Screen, no shutter lag, excellent pictures, fantastic movies.
+1	Quality LCD screen, no closing delay, excellent images, fantastic movies.
+1	Excellent quality prints., Easy to install.
+1	Excellent quality taxes, easy to establish.
+1	...small
+1	Small.

@@ -1,0 +1,60 @@
+1	small, enough features &#13;&#10;
+1	Small and sufficient features &#13;&#10;
+0	Software / driver problems
+0	Software / Controller Problems
+0	Sometimes more than one sheet of paper is pulled through at a time
+0	Sometimes there's more than one pedal of paper per vehicle.
+0	A little noisy. 
+0	A little noisy.
+0	Ink smears and ink blots
+0	Ink stains and ink stains
+1	It's cheap
+1	It's a board.
+1	5 MP, manual features, construction, quality pictures, software interface, quick charger.
+1	5 MP, manual features, construction, quality photos, software interface, fast charger.
+0	Does not fold very compact.
+0	It doesn't bend very tightly.
+1	instant photos, ease of carrying, no downloading
+1	Instant photography, easy to transport, without downloading
+1	Great picture photos
+1	Large images
+0	Port cover, antenna when extended, takes a bit to find sweet spot.
+0	Covering the door, the antenna when it extends, takes a while to find the addol.
+1	egronomic shape, inexpensive, loud ringer, several accessories included, fm tuner, minibrowser
+1	Ergonomic shape, low cost sonar, strong, various accessories included, fm tuner, minibrowser
+1	Excellent quality prints., Easy to install.
+1	Excellent quality prints., Easy to install.
+0	could do with more pixals
+0	Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal Pixal
+1	speed, clarity
+1	Hurry up, maureye.
+1	fabulous picture quality, very quick operation
+1	Fabulous image quality, very fast operation
+0	No Back-light at night.
+0	There is no rear light during the night.
+0	Battery life is terrible
+0	The long-lived battery is terrible.
+0	Brightness varies too much on LCD, video out, and computer
+0	Lighting changes path to LCD, view and page
+1	Great Pictures
+1	Large images
+0	Flash recharges slowly with NiMH. Small 8MB card.
+0	Slow flash load in the NiMH cartridge. 8MB.
+1	A solidly built  great little printer.
+1	A large and tiny printer solidly built.
+0	so new that it's hard to find or get accessories for
+0	The new thing is that it is difficult, that it can complete, that it can fill.
+0	Functions don't work as well as if individual items (separate fax, etc)
+0	Functions did not work as well as individual elements (separate fax, etc.)
+1	Buy it! Great first digital camera, Comes with docking station, charger, fair price, great quality.
+1	The first large digital camera, arrived at the anchovy, car, good price, great quality.
+1	...small
+1	...small.
+0	sh_t pictures most of the time, viewfinder not accurate
+0	Sh_t images most of the time, the viewfinder is not required
+1	Easy to use, great battery life, variety of ringtones and faceplates to buy.
+1	Easy to use, battery life, variety of sonars and acquired facets.
+1	Quality LCD Screen, no shutter lag, excellent pictures, fantastic movies.
+1	Quality LCD screen, no filling lake, excellent photos, fantastic movies.
+0	No USB and no optical zoom, not great in low light
+0	No zoom and USB optics, no big low lights

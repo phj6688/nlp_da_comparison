@@ -106,7 +106,7 @@ def plot_tsne(tsne, labels, output_path):
 
 	colors = ['b', 'g']#, 'r', 'c', 'm', 'y', 'k', '#ff1493', '#FF4500']
 	fig, ax = plt.subplots()
-
+	count = 0
 	for big_group in big_groups:
 
 		for group in [big_group, big_group+100]:
@@ -117,7 +117,8 @@ def plot_tsne(tsne, labels, output_path):
 				if label == group:
 					x.append(tsne[j][0])
 					y.append(tsne[j][1])
-
+					count += 1
+			print('len of x' , len(x), 'len of y', len(y) )
 			#params
 			color = colors[int(group % 100)]
 			marker = 'o' if group in[0,100] else '^'
@@ -132,9 +133,10 @@ def plot_tsne(tsne, labels, output_path):
 
 	legend_size = plot_to_legend_size[output_path]
 	plt.legend(loc='best',prop={'size': legend_size})
-	print('len of x' , len(x), 'len of y', len(y) )
+	
 	plt.savefig(output_path, dpi=1000)
 	plt.clf()	
+	print ('<== count x and y: ==>', count)
 import plotly.express as px
 
 
