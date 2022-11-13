@@ -1,7 +1,11 @@
+# =============================================================================
+# Import libraries
+# =============================================================================
 from aug import *
 from functions import *
 from tqdm import tqdm
 
+import plotly
 import plotly.express as px
 import matplotlib.pyplot as plt
 import numpy as np
@@ -29,6 +33,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  #get rid of warnings
 # Variables
 # =============================================================================
 # dictionarys
+# =============================================================================
 dict_of_train_datasets = {'pc':'data/pc/train.txt','cr':'data/cr/train.txt','subj':'data/subj/train.txt'}
 dict_of_test_datasets = {'pc':'data/pc/test.txt','cr':'data/cr/test.txt','subj':'data/subj/test.txt'}
 
@@ -48,19 +53,18 @@ dict_of_backtranslation_augmented_datasets = {'pc':'data/pc/backtranslation_augm
 
 dict_of_aug_methods = {'eda':dict_of_eda_augmented_datasets, 'wordnet':dict_of_wordnet_augmented_datasets, 'aeda':dict_of_aeda_augmented_datasets, 'backtranslation':dict_of_backtranslation_augmented_datasets}
 
-# =============================================================================
+# # =============================================================================
+# # laod data
+# df_train_cr = load_data('data/cr/train.txt')
+# df_train_pc = load_data('data/pc/train.txt')
+# df_train_subj = load_data('data/subj/train.txt')
+# df_test_pc = load_data('data/pc/test.txt')
+# df_test_cr = load_data('data/cr/test.txt')
+# df_test_subj = load_data('data/subj/test.txt')
 
-# laod data
-dfrain_pc = load_data('data/pc/train.txt')
-dfrain_cr = load_data('data/cr/train.txt')
-dfrain_subj = load_data('data/subj/train.txt')
-dfest_pc = load_data('data/pc/test.txt')
-dfest_cr = load_data('data/cr/test.txt')
-dfest_subj = load_data('data/subj/test.txt')
-
-# =============================================================================
-
+# ===============================================================================
 # constants
+# ===============================================================================
 word2vec_len = 300
 input_size = 25
 num_classes = 2
@@ -162,43 +166,6 @@ def get_x_y(train_txt, num_classes, word2vec_len, input_size, word2vec, percent_
 def one_hot_to_categorical(y):
     assert len(y.shape) == 2
     return np.argmax(y, axis=1)
-#load data
-def run_model(dataset_name):
-	train_x, train_y = get_x_y(dict_of_train_datasets[dataset_name], num_classes, word2vec_len, input_size, dict_of_word2vec_files[dataset_name], 1)
-	test_x, test_y = get_x_y(dict_of_test_datasets[dataset_name], num_classes, word2vec_len, input_size, dict_of_word2vec_files[dataset_name], 1)
-
-	#build model
-	model = build_model(input_size, word2vec_len, num_classes)
-
-	callbacks = [EarlyStopping(monitor='val_loss', patience=3)]
-
-	#train model
-	model.fit(	train_x, 
-					train_y, 
-					epochs=100000, 
-					callbacks=callbacks,
-					validation_split=0.1, 
-					batch_size=1024, 
-					shuffle=True, 
-					verbose=0)
-	#save the model
-	model.save(dict_of_models[dataset_name])
-
-
-	#evaluate model
-	y_pred = model.predict(test_x)
-	test_y_cat = one_hot_to_categorical(test_y)
-	y_pred_cat = one_hot_to_categorical(y_pred)
-	acc = accuracy_score(test_y_cat, y_pred_cat)
-
-	#clean memory???
-	train_x, train_y = None, None
-
-	#return the accuracy
-	#print("data with shape:", train_x.shape, train_y.shape, 'train=', train_file, 'test=', test_file, 'with fraction', percent_dataset, 'had acc', acc)
-	return acc
-
-
 
 def aug_samples(dataset_name):
     data = load_data(dict_of_30_samples['pc'])
@@ -215,8 +182,8 @@ def aug_samples(dataset_name):
 
 
 def plotly_tsne(df, df_name, method):
-    total_distance = df['distance'].sum()
-    fig = px.scatter(df, x='x', y='y', color='color'
+    total_distance = df['normalized_distance'].sum()/2
+    fig = px.scatter(df, x='standardized_x', y='standardized_y', color='color'
                                 , size='size'
                                 , symbol='symbol'
                                 , title=f't-SNE plot of {df_name} dataset with {method} augmentation method, total distance: {total_distance:.4f}'
@@ -226,7 +193,8 @@ def plotly_tsne(df, df_name, method):
                                                                             'Distance: %{customdata[2]:.5f} <br>' )
     fig.update_layout(showlegend=False)
     fig.show()
-                       
+    #fig.write_html(f'images/tsne_{df_name}_{method}.html')
+    
 
 def cal_distance(df,number_of_augmentation_per_sample):
     dists = []
@@ -270,10 +238,6 @@ def label_to_symbol_map(x):
         return 'o'
 
 
-
-
-
-
 def run_tsne(dataset_name,method):
 
     model = load_model(dict_of_models[dataset_name])
@@ -292,10 +256,21 @@ def run_tsne(dataset_name,method):
     t = get_plot_vectors(layer_output,perplexity=30,n_iter=5000,random_state=10,method='exact')
 
     df = pd.DataFrame(t, columns=['x','y'])
-    dfext = load_data(augmented_file)
-    dfext = dfext[['text']]
+    df['standardized_x'] = df['x'].apply(lambda x: (x - df['x'].mean()) / df['x'].std())
+    df['standardized_y'] = df['y'].apply(lambda x: (x - df['y'].mean()) / df['y'].std())
+
+    df_text = load_data(augmented_file)
+
+
+    df['ground_truth'] = [int(i) for i in df_text['class']]
+    df['predicted_label'] = list(one_hot_to_categorical(model.predict(X)))
+
+    df_text = df_text[['text']]
+
     df['distance'] = cal_distance(df,1)
-    df['text'] = dfext['text']
+    df['normalized_distance'] = df['distance'].apply(lambda x: (x - df['distance'].min()) / (df['distance'].max() - df['distance'].min()))
+
+    df['text'] = df_text['text']
     df['label'] = labels_str
     df['color'] = labels_color
     df['size'] = labels_size
@@ -303,11 +278,17 @@ def run_tsne(dataset_name,method):
 
     plotly_tsne(df, dataset_name, method)
 
-if __name__ == '__main__':
-    list_of_datasets = ['pc','cr','subj']
-    list_of_aug_methods = ['eda','wordnet','aeda','backtranslation']
 
-    for dataset_name in list_of_datasets:
-        for method in list_of_aug_methods:
-            run_tsne(dataset_name,method)
-    #run_tsne('cr','aeda')
+# =============================================================================
+# Main
+# =============================================================================
+
+
+if __name__ == '__main__':
+    # list_of_datasets = ['pc','cr','subj']
+    # list_of_aug_methods = ['eda','wordnet','aeda','backtranslation']
+
+    # for dataset_name in list_of_datasets:
+    #     for method in list_of_aug_methods:
+    #         run_tsne(dataset_name,method)
+    run_tsne('subj','aeda')
