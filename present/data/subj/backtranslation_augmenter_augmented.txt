@@ -1,60 +1,60 @@
-0	No Back-light at night.
-0	There are no back seats at night.
-1	Buy it! Great first digital camera, Comes with docking station, charger, fair price, great quality.
-1	The first digital room comes with docking station, charger, good price, excellent quality.
-1	5 MP, manual features, construction, quality pictures, software interface, quick charger.
-1	5 MP, send, edit, quality images, desktop interface, quick download.
-1	It's cheap
-1	It's cheap.
-1	Easy to use, great battery life, variety of ringtones and faceplates to buy.
-1	Easy to use, battery life, sound variations and expensive purchase.
-0	Flash recharges slowly with NiMH. Small 8MB card.
-0	Flash is slowly recharged with NiMH. Small 8MB card.
-1	Great Pictures
-1	Large images
-1	fabulous picture quality, very quick operation
-1	Fabulous image quality, fast operation
-1	small, enough features &#13;&#10;
-1	Minimum and sufficient features &#13;&#10;
-1	instant photos, ease of carrying, no downloading
-1	Snapshot, easy to transport, no escape
-0	so new that it's hard to find or get accessories for
-0	News in such a way that it is difficult to find access to
-1	Great picture photos
-1	Large Image Images
-0	Port cover, antenna when extended, takes a bit to find sweet spot.
-0	The cover of the port, the antenna when it extends, takes a little time to find a soft spot.
-0	A little noisy. 
-0	A little strong.
-0	could do with more pixals
-0	could do with more pixels
-0	Software / driver problems
-0	Software / Driver Problems
-0	Brightness varies too much on LCD, video out, and computer
-0	Brightness varies too much in LCD, video outside and computer
-0	Functions don't work as well as if individual items (separate fax, etc)
-0	The functions did not work as much as if individual elements (separate fax, etc.)
-0	No USB and no optical zoom, not great in low light
-0	No optical zoom of USB, no big in black light
-0	Sometimes more than one sheet of paper is pulled through at a time
-0	Archions of a paper unter in an instant.
-1	A solidly built  great little printer.
-1	A very small impression solidly built.
-1	egronomic shape, inexpensive, loud ringer, several accessories included, fm tuner, minibrowser
-1	Ergonomic shape, sound head, strong, jivêye seat, tuner fm, minibrowser
-0	Ink smears and ink blots
-0	Ink handles and ink handles
-0	Battery life is terrible
-0	The battery life is terrifying.
-0	Does not fold very compact.
-0	Don't bend too compact.
-0	sh_t pictures most of the time, viewfinder not accurate
-0	Images sh_t most of the time, the viewfinder is not necessary
-1	speed, clarity
-1	Speedy, clear
-1	Quality LCD Screen, no shutter lag, excellent pictures, fantastic movies.
-1	Quality LCD screen, no closing delay, excellent images, fantastic movies.
-1	Excellent quality prints., Easy to install.
-1	Excellent quality taxes, easy to establish.
-1	...small
-1	Small.
+1	chock full of ethnic flavor , whimsy , doubt , faith , joy and wonder , mary and joe is a delightful surprise , as the old story is brought into the present with startling freshness and power . 
+1	Mary and Joe's beautiful surprise is what antiquity should present at a nice and amazing time.
+1	the parent corporation sends in an elite military unit , where they meet alice , who is suffering from amnesia due to exposure to nerve gas . 
+1	A parent company sends an elite military unit, where Alice finds amnesia due to exposure to nerve gases.
+1	as fate would have it , they realize how close they all are from the other side ; of life , of love , and of losing it . 
+1	And it happened, when life was reversed, that he lost.
+1	barry egan ( adam sandler ) is a small business owner with seven sisters whose abuse has kept him alone and unable to fall in love . 
+1	Barry Egan (Adam Sandler) has a thirsty sister, whose abuse keeps him alone and unable to love.
+0	an enchanting film that presents an audacious tour of the past and takes within its warm embrace the bounties of cultural artifacts inside st . petersburg's hermitage museum . 
+0	a fascinating film presenting a bold journey from the past and accepting, in his warm welcome, the prize of cultural artifacts in the hermitage of the St. Petersburg Museum.
+0	the film tries too hard to be funny and tries too hard to be hip . the end result is a film that's neither . 
+0	The film tries to be too fun and too fun.The final result is a film that is not the same.
+0	noyce films it more as a shocking history lesson than as drama . 
+0	Noyce records more as an impressive history lesson than a drama.
+0	a smart , provocative drama that does the nearly impossible : it gets under the skin of a man we only know as an evil , monstrous lunatic . 
+0	An intelligent drama that makes it impossible: it's under the page of a man who knows himself as a mackman, monsters.
+1	in this movie , de niro plays mitch preston , a hard-nosed , hardworking police detective . 
+1	De Niro presents Mitch, a poyet and laborious politician.
+0	little more than a stylish exercise in revisionism whose point . . . is no doubt true , but serves as a rather thin moral to such a knowing fable . 
+0	I change more than an elegant revisionist exercise, which I insist... is very inducible, but serves as a moral good for a fairy.
+1	the plants are the only break in the grey monotony around her . 
+1	Pages are the only fracture of selected gray monotonia.
+1	regulus : the first nuclear missile submarine is a documentary about the navy's struggle , in the era immediately following wwii , to develop and deploy a submarine-launched nuclear missile . 
+1	Rule: The first submarine nuclear missile is a documentary of the immediate naval battle after Wwii to develop and implement the launched submarine nuclear missile.
+1	in order get loan sharks off his back , he must finish his novel in 30 days or wind up dead . 
+1	In 30 days and the end of Mortus.
+1	for anni they are not enemies , but just men . 
+1	Years isn't a boy, but he's just a man.
+0	it's not going to be everyone's bag of popcorn , but it definitely gives you something to chew on . 
+0	It wasn't everyone's bag of popcorn, but it definitely gives you something to chew on.
+1	based on the edgar allen poe short story , " the facts in the case of m . valdemar , " comedy revolves around a doctor who convinces a dying man's family to allow him to put the man in a trance as he takes his final breaths . 
+1	If based on Edgar Valdemar's account that Valdemar is not the master of comedy that the doctor converts convinced the family of all the dead in the trenches in the last breath.
+0	bloody sunday has the grace to call for prevention rather than to place blame , making it one of the best war movies ever made . it's a movie that accomplishes so much that one viewing can't possibly be enough . 
+0	Sang Sunday you have the grace to invoke prevention instead of persecution, making one of the flash war memories that have been archived.
+1	the rock as a bounty hunter who attempts to square a debt by heading to the amazon jungle to capture someone . 
+1	Jungla Amazon strong selected to delegalize.
+0	the spark of special anime magic here is unmistakable and hard to resist . 
+0	The writing of special magic items is inevitable and difficult to resist.
+1	as the sexual revolution blossomed , and porn sub culture flourished john was the man . 
+1	And the sexual revolution has progressed, and the pornographic subculture has progressed.
+0	this daring film challenges most widely held notions about religious conviction while providing a complex portrait of an identity crisis that's run amok and a good mind that's jumped the tracks . 
+0	This bold film challenges the notions of widespread religious beliefs, giving a complex portrait of an expansional identity crisis and a healthy hope of expansion.
+1	new york serves as a backdrop for a cast of characters in search of love , lust or lucre including a woman who makes awkward moves on the man renovating her soho loft , an embezzler , a sleazy artist and a phone psychic . 
+1	New York serves as a base for a group of characters looking for love, health or health, including a lady who shames the man who renews his espia de soya, a fraud, a slow artist and a sensitive phone.
+0	it's not as awful as some of the recent hollywood trip tripe . . . but it's far from a groundbreaking endeavor . 
+0	It's not as horrible as Hollywood's value, but it's far from being an innovative effort.
+0	if there was a flu shot for the blues , it might come in the form of this embraceable ode to loneliness and love regained . 
+0	If there is no pretext, a blue vaccine can come in the form of solar support and mosaics.
+0	this is a story that zings all the way through with originality , humour and pathos . 
+0	This is a story that always lasts with originality, humor and pathos.
+0	parker updates the setting in an attempt to make the film relevant today , without fully understanding what it was that made the story relevant in the first place . 
+0	Parker updated the script in a tempting of relevant raw facts or films, knowing that history was relevant at first reading.
+1	both will fight to the death not to give it to each other . 
+1	The two van lutars died because they wouldn't report them.
+0	so refreshingly incisive is grant that for the first time he'll probably appeal more to guys than to their girlfriends who drag them to this movie for the hugh factor . 
+0	Choose a refreshing idea that I love the women of the first dress their friends chose to make Hagh.
+0	some body is a shaky , uncertain film that nevertheless touches a few raw nerves . 
+0	a certain body is an uncertain film, which, however, touches raw nerves.
+1	after having a divine vision and speaking with jesus , she suddenly changes her look and usual ways , disturbing the local , ultra conservative population . 
+1	The appearance of Jesus did not change abruptly and openly, dispersing the local ultra-conservative population.

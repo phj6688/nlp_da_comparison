@@ -238,7 +238,7 @@ def label_to_symbol_map(x):
         return 'o'
 
 
-def run_tsne(dataset_name,method):
+def run_tsne(dataset_name,method,layer_number):
 
     model = load_model(dict_of_models[dataset_name])
     augmented_file = dict_of_aug_methods[method][dataset_name]
@@ -251,7 +251,7 @@ def run_tsne(dataset_name,method):
     labels_symbol = list(map(label_to_symbol_map,labels))
 
     X = train_x(augmented_file, word2vec_len, input_size, word2vec)
-    intermediate_layer_model = Model(inputs=model.input, outputs=model.get_layer(model.layers[5].name).output)
+    intermediate_layer_model = Model(inputs=model.input, outputs=model.get_layer(model.layers[layer_number].name).output)
     layer_output = intermediate_layer_model.predict(X)
     t = get_plot_vectors(layer_output,perplexity=30,n_iter=5000,random_state=10,method='exact')
 
@@ -291,4 +291,4 @@ if __name__ == '__main__':
     # for dataset_name in list_of_datasets:
     #     for method in list_of_aug_methods:
     #         run_tsne(dataset_name,method)
-    run_tsne('subj','aeda')
+    run_tsne('cr','wordnet',4)

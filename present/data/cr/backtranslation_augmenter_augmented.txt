@@ -1,60 +1,60 @@
-0	Port cover, antenna when extended, takes a bit to find sweet spot.
-0	The cover of the door, the antenna when it extends, takes a while to find a soft spot.
-1	It's cheap
-1	If you read this...
-1	Quality LCD Screen, no shutter lag, excellent pictures, fantastic movies.
-1	Quality LCD screen, no film delay, excellent images, fantastic movies.
-0	so new that it's hard to find or get accessories for
-0	News difficult to find or get accessories for
-1	5 MP, manual features, construction, quality pictures, software interface, quick charger.
-1	5 MP, manuals, constructions, quality images, interface software, fast charger.
-0	No Back-light at night.
-0	There's no backlight during the night.
-1	egronomic shape, inexpensive, loud ringer, several accessories included, fm tuner, minibrowser
-1	ergonomic shape, leather, robust sonar, various accessories included, tuner fm, minibrowser
-0	Brightness varies too much on LCD, video out, and computer
-0	Brightness varies greatly for LCD, video and computer
-1	Buy it! Great first digital camera, Comes with docking station, charger, fair price, great quality.
-1	Excellent first digital camera, delivered with attraction station, charger, fair price, excellent quality.
-1	fabulous picture quality, very quick operation
-1	Fabulous image quality, very fast operation
-0	Does not fold very compact.
-0	It's not very compactly bent.
-0	Sometimes more than one sheet of paper is pulled through at a time
-0	Sometimes it attracts more than one piece of paper at a time.
-1	A solidly built  great little printer.
-1	A large and solidly built printer.
-1	small, enough features &#13;&#10;
-1	&#13;&#10;
-1	Easy to use, great battery life, variety of ringtones and faceplates to buy.
-1	Easy to use, long life, variety of stamps and facs to buy.
-1	instant photos, ease of carrying, no downloading
-1	Instant photos, easy transport, no downloads
-0	Battery life is terrible
-0	The life of the battery is terrible.
-0	No USB and no optical zoom, not great in low light
-0	No optical zoom and USB, big low light
-1	Excellent quality prints., Easy to install.
-1	Company of excellent quality., Easy to install.
-0	sh_t pictures most of the time, viewfinder not accurate
-0	Sh_t the average images of time, the font is not required
-1	...small
-1	...the little one.
-0	Software / driver problems
-0	Software / Driver Problems
-1	Great picture photos
-1	Large images of the image
-0	Ink smears and ink blots
-0	Ink cakes and ink stains
-1	speed, clarity
-1	Quick, clean.
-1	Great Pictures
-1	Very wide images
-0	Functions don't work as well as if individual items (separate fax, etc)
-0	Functions that are not functional and individual elements (separate fax, etc.)
-0	A little noisy. 
-0	A little smoky.
-0	could do with more pixals
-0	can do with multiple pixels
-0	Flash recharges slowly with NiMH. Small 8MB card.
-0	Flash slowly recharges with NiMH. Small 8MB card.
+1	The Micro seeemed like an iPod for less. 
+1	Micro looks like an iPod for less.
+0	The only problem I have with the buttons is that the power button and print/share button don't have a nice click. 
+0	The only problem with the button is that buttons and print/participation buttons do not have a good click.
+0	 There 's also no height adjustability , so it sits very low to the desk .
+0	Semi height adjustment, sitting on the table.
+1	 Pros : - Great sound for a $ 100 speaker at mid to higher levels .
+1	Pros : - Great sound for a speaker from $100 to medium to higher levels.
+1	You can use the player to store your computer data files (Good feature to have).   
+1	You can use the drive to store data files from the calculator (good function to hold in your arms).
+0	however , it has failed to deliver on quality . 
+0	However, it has not achieved qualitative results.
+0	so now it still plays everything , you just can 't see it ! 
+0	You can't select!
+0	While I was trying to play Half Life 2 it started popping up with "alerts" every twenty seconds (literally), warning me my antivirus protection was off.
+0	While trying to play Half Life 2 began to appear with "alertas" every 20 seconds (literature), to warn me that my antivirus protection was disabled.
+0	Some people have commented about the size and weight of the phone, and it has rightfully gotten the nick-name "the bar of soap" which, it really is.
+0	One commented how much grain and pessimism the calls and called it "Deer" which is for her.
+0	Knocked 1 star off for the install wizard - it wasted alot of time running it.     
+0	A star arrived at the facility, lost a lot of time wandering around.
+0	i will never buy a creative product again . 
+0	I would never buy a creative product.
+1	I just went on a quick photo shoot in NYC's  Central Park today, and what a bunch of beautiful photos I took, if I do  say so myself (and I do!)
+1	Hossin goes to a small seduction photo in New York Central Park, and photographs many beautiful photos, if you tell me (and me!)
+1	 I do n't for-see myself having any issues with it in the coming year or two however if I do , I will know that with this product , it will be taken care of for free and quick with helpful and courteous customer service reps. The service of Amazon in getting this item to me was faster than I expected and it is exactly what I knew it would be .
+1	I don't think you have any problems during the year or the year, but if it's you, if it's you.
+1	All I have to say is that the pics I get with my SD500 are both rich and color and high in detail, the user interface is awesome, the battery charger is tiny and super light and SD cards are relatively cheap and getting cheaper all the time.
+1	Note that the images I have with SD500 Mass are rich and colorful and detailed, the user interface is Meraville, the load is small and SD folders are relatively good and always good.
+1	 Sound effects really sound more authentic .
+1	Sound effects, though.
+1	 The system was nowhere near stable , and the code was in `` alpha '' stage at best .
+1	The system did not exist and the code was in alpha phase.
+0	 A week out of the box and I began to see slight contractions of the screen from time to time , growing more frequent each day .
+0	A set of brands, boxes and boots, one day increasing the volume mature and mature.
+1	11 ) minimal pause between songs - less than that on other devices - good achievement for a hard-drive based player 
+1	11) minimum pause between songs - less than in other divisions - good performance for a hard drive based on playback
+1	 So far , I am super happy with this small yet powerful enough laptop .
+1	So far, I'm super happy with this little, but powerful laptop.
+1	 the netbook work as a breeze for my sales person , it worked fine , fast and with the extra ram nothing could stop it , in fact it works better than my own laptop so I will change to this one as soon as possible
+1	They did it to me, which is good, and you can't discern that it works badly like my laptop, which varies depending on what you can do.
+0	I downloaded the new firmware which was supposed to take care of the problem, but it hasn't worked. 
+0	The new firmware is not the selection, which has had to mask the problem, but does not work.
+1	 Fits nicely on the small desk we use in our computer room .
+1	It fits directly into a table we use in the computer room.
+1	 All I can say is that this is an excellent devise .
+1	All I can say is that it's a jiv.
+0	my only complaint would be that you need id3 tags & that takes a while to do if your mp3 files do n't have them . 
+0	My only complaint would be that I needed id3 tags and you have to give me time if you don't have mp3 tags.
+0	it had a heavier and more sturdy casing . 
+0	She had a heavy, sturdy shell.
+1	The more I use it and figure out how to do things, the more I like it.     
+1	I can't read everything, I can't read everything.
+1	Compatability with other devices is excellent too; I've only found one 11b device that won't work with its mixed mode (and it won't work with *anyone's* mixed mode).
+1	Compatible with other divisions is also excellent; found an 11b partition that does not work with the mixed mode (and does not work with the mixed mode).
+0	the zen does n't support folders so it is not really a storage device ; even with third party software that " creates " folders , documents and programs can 't be launched from the zen , so it is not a hard disk , it 's a storage device at best . 
+0	Zen does not support steps in such a way that it is not actually memory software and nic a third that "creates" steps, documents and can re-relevant Zen program, not hard drive, memory is.
+0	who in the hell needs a frigging *VGA* camera on their CELLPHONE???
+0	Who in your cell drinks the VGA room?
+0	Finally, I gave up and I purchased a Router Razier.
+0	Finally, I quit and bought a Razier router.
