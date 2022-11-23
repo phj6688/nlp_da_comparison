@@ -167,14 +167,14 @@ def one_hot_to_categorical(y):
     assert len(y.shape) == 2
     return np.argmax(y, axis=1)
 
-def aug_samples(dataset_name):
-    data = load_data(dict_of_30_samples['pc'])
-    methods = ['eda_augmenter','wordnet_augmenter','aeda_augmenter','backtranslation_augmenter']
-    for method in methods:
-        augmented_data = augment_text(data, method,fraction=1,pct_words_to_swap=0.2 ,transformations_per_example=1,
-                    label_column='class',target_column='text',include_original=True)
-        augmented_data = augmented_data[['class','text']]
-        np.savetxt(f'data/{dataset_name}/{method}_augmented.txt', augmented_data.values, fmt='%s', delimiter='\t')
+# def aug_samples(dataset_name):
+#     data = load_data(dict_of_30_samples['pc'])
+#     methods = ['eda_augmenter','wordnet_augmenter','aeda_augmenter','backtranslation_augmenter']
+#     for method in methods:
+#         augmented_data = augment_text(data, method,fraction=1,pct_words_to_swap=0.2 ,transformations_per_example=1,
+#                     label_column='class',target_column='text',include_original=True)
+#         augmented_data = augmented_data[['class','text']]
+#         np.savetxt(f'data/{dataset_name}/{method}_augmented.txt', augmented_data.values, fmt='%s', delimiter='\t')
 
 
 
@@ -290,5 +290,5 @@ if __name__ == '__main__':
 
     # for dataset_name in list_of_datasets:
     #     for method in list_of_aug_methods:
-    #         run_tsne(dataset_name,method)
+    #         run_tsne(dataset_name,method,4)
     run_tsne('cr','wordnet',4)
