@@ -22,24 +22,22 @@ def dataset_path(names,target):
     return list_dataset_paths
 
 
-def load_data(path):
+def load_data(file):
     """
     Loads data from a txt file.
     """
     # check file format
-    if path.endswith('.txt'):
-        df = pd.read_csv(path, sep='|', header=None, names=['text'])
-        try:
-            df['class'] = df['text'].apply(lambda x: x.split('\t')[0])
-            df['text'] = df['text'].apply(lambda x: x.split('\t')[1])
-        except:
-            df['class'] = df['text'].apply(lambda x: x.split(' ',1)[0])
-            df['text'] = df['text'].apply(lambda x: x.split(' ',1)[1])
+    df = pd.read_csv(file, sep='|', header=None, names=['text'])
+    try:
+        df['class'] = df['text'].apply(lambda x: x.split('\t')[0])
+        df['text'] = df['text'].apply(lambda x: x.split('\t')[1])
+    except:
+        df['class'] = df['text'].apply(lambda x: x.split(' ',1)[0])
+        df['text'] = df['text'].apply(lambda x: x.split(' ',1)[1])
 
-        df = df[['class', 'text']]
-        return df
-    else:
-        raise ValueError('File format not supported.')
+    df = df[['class', 'text']]
+    return df
+
 
 def csv_to_txt(file):
     '''retun a txt file from a csv file with 
@@ -98,13 +96,14 @@ def augment_text(df,aug_method,fraction,pct_words_to_swap,transformations_per_ex
                 class_list.append(c)
 
     df_augmented = pd.DataFrame({target_column: text_list, label_column: class_list})
+    df_augmented = df_augmented[[label_column,target_column]]
 
     return df_augmented
 
 
 
 
-def get_table_download_link(df):
+def get_csv_download_link(df):
     """Generates a link allowing the data in a given panda dataframe to be downloaded
     in:  dataframe
     out: href string
@@ -114,6 +113,15 @@ def get_table_download_link(df):
     href = f'<a href="data:file/csv;base64,{b64}">Download csv file</a>'
     return href
 
+def get_txt_download_link(df):
+    """Generates a link allowing the data in a given panda dataframe to be downloaded
+    in:  dataframe
+    out: href string
+    """
+    txt = df.to_csv(sep='\t',index=False,header=False)
+    b64 = base64.b64encode(txt.encode()).decode()  # some strings <-> bytes conversions necessary here
+    href = f'<a href="data:file/txt;base64,{b64}">Download txt file</a>'
+    return href
 
 def augment_sentence(sentence, aug_method, pct_words_to_swap=0.3, transformations_per_example=1):
     augmenter_dict = { 
