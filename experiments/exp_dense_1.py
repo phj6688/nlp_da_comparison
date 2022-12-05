@@ -113,10 +113,10 @@ def run(dataset_name,aug_method,n_sample):
 
     model_aug.fit(X_train_aug, y_train_aug, epochs=1000,
                  callbacks=callbacks, validation_split=0.1,
-                  batch_size=1024,shuffle=True, verbose=0)
+                  batch_size=128,shuffle=True, verbose=0)
     model_original.fit(X_train_original, y_train_original, epochs=1000,
                     callbacks=callbacks, validation_split=0.1,
-                    batch_size=1024,shuffle=True, verbose=0)
+                    batch_size=128,shuffle=True, verbose=0)
 
     # Evaluate model
     print('Evaluating model...')
@@ -130,4 +130,7 @@ def run(dataset_name,aug_method,n_sample):
 
 if __name__ == '__main__':
 
-    run('pc','aeda_augmenter',4)
+    
+
+
+    run('pc','wordnet_augmenter',2)
