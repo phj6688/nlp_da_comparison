@@ -16,10 +16,10 @@ if __name__ == "__main__":
 
 	for dataset in datasets:
 
-		dataset_folder = 'txt_for_test/train/' + dataset
+		dataset_folder = './data/train' + dataset
 		#train1000_sample = 'txt_for_test/' + dataset + '/test_short.txt'
 		#test_aug_short = dataset_folder + '/test_short_aug.txt'
-		train = dataset_folder + '/train1000_sample.txt'
+		train = dataset_folder + '/train.txt'
 		train_aug = dataset_folder + '/train_aug.txt'
 		word2vec_pickle = dataset_folder + '/word2vec.p' 
 
